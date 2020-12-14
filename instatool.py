@@ -263,10 +263,20 @@ def powerset(s):
 
 
 def main():
-    username = input("username: ")
-    password = input("password: ")
-    tool = InstagramTools(username,password)
-    tool.login() #logins your account
-    time.sleep(3)
+    keepgoing = True
+    while keepgoing:
+        print ("--------------")
+        print ("\n1. Login to your account. \n2. Exit Program")
+        choice = int(input("\nChoice: "))
+        if choice == 1:
+            username = input("username: ")
+            password = input("password: ")
+            tool = InstagramTools(username,password)
+            tool.login() #logins your account
+            time.sleep(1.5)
+        else:
+            print("exiting")
+            time.sleep(0.5)
+            exit()
 if __name__ == "__main__":
     main()
